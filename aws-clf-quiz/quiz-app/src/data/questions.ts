@@ -982,8 +982,34 @@ export const questionBank: Question[] = [
   },
 ];
 
-// Function to select random questions from the bank
+// Function to shuffle options within a question
+const shuffleQuestionOptions = (question: Question): Question => {
+  const options = [...question.options];
+  const correctAnswer = options[question.correct];
+
+  // Fisher-Yates shuffle algorithm
+  for (let i = options.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [options[i], options[j]] = [options[j], options[i]];
+  }
+
+  // Find the new index of the correct answer
+  const newCorrectIndex = options.findIndex(
+    (option) => option === correctAnswer
+  );
+
+  return {
+    ...question,
+    options,
+    correct: newCorrectIndex,
+  };
+};
+
+// Function to select random questions from the bank with shuffled options
 export const selectRandomQuestions = (count: number = 20): Question[] => {
   const shuffled = [...questionBank].sort(() => 0.5 - Math.random());
-  return shuffled.slice(0, count);
+  const selected = shuffled.slice(0, count);
+
+  // Shuffle options for each question
+  return selected.map(shuffleQuestionOptions);
 };
