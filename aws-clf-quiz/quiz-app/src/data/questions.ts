@@ -1,7 +1,7 @@
 import type { Question } from "../types/quiz";
 
 export const questionBank: Question[] = [
-  // Core Services
+  // Core Services - Domain 3: Cloud Technology and Services
   {
     question: "Which AWS service provides a managed NoSQL database?",
     options: [
@@ -50,7 +50,87 @@ export const questionBank: Question[] = [
       "Amazon RDS (Relational Database Service) makes it easy to set up, operate, and scale a relational database in the cloud, supporting multiple database engines.",
   },
 
-  // Well-Architected Framework
+  // Cloud Concepts & Migration - Domain 1: Cloud Concepts
+  {
+    question:
+      "What is the AWS Cloud Adoption Framework (CAF) primarily designed to help organizations with?",
+    options: [
+      "Technical implementation of AWS services",
+      "Structuring cloud adoption efforts and reducing business risks",
+      "Cost optimization strategies",
+      "Security compliance requirements",
+    ],
+    correct: 1,
+    explanation:
+      "The AWS Cloud Adoption Framework (CAF) helps organizations structure their cloud adoption journey, reduce business risks, improve ESG performance, and increase operational efficiency through proven guidance and best practices.",
+  },
+  {
+    question:
+      "Which of the following is a key benefit of the AWS Cloud Adoption Framework (CAF)?",
+    options: [
+      "Automatic application migration",
+      "Reduced business risk and improved ESG performance",
+      "Lower AWS service costs",
+      "Immediate technical support",
+    ],
+    correct: 1,
+    explanation:
+      "AWS CAF helps organizations reduce business risk, improve environmental, social, and governance (ESG) performance, increase revenue, and improve operational efficiency through structured cloud adoption.",
+  },
+  {
+    question:
+      "What is a primary economic benefit of migrating from fixed costs to variable costs in the cloud?",
+    options: [
+      "You always pay the same amount regardless of usage",
+      "You pay only for what you use, when you use it",
+      "You get unlimited resources for a fixed price",
+      "You avoid all operational expenses",
+    ],
+    correct: 1,
+    explanation:
+      "Moving from fixed costs (capital expenditures) to variable costs (operational expenditures) means you pay only for the computing resources you consume, providing cost flexibility and eliminating large upfront investments.",
+  },
+  {
+    question:
+      "Which cost factor is typically REDUCED when moving from on-premises to AWS Cloud?",
+    options: [
+      "Network bandwidth costs",
+      "Data center real estate and maintenance costs",
+      "Software licensing fees",
+      "Employee training costs",
+    ],
+    correct: 1,
+    explanation:
+      "Moving to AWS eliminates the need for physical data center space, facilities maintenance, power, cooling, and hardware replacement costs that are required for on-premises infrastructure.",
+  },
+  {
+    question:
+      "What does 'rightsizing' mean in the context of AWS cloud economics?",
+    options: [
+      "Choosing the largest instance type available",
+      "Matching instance types and sizes to workload requirements",
+      "Using only Reserved Instances",
+      "Selecting the cheapest available option",
+    ],
+    correct: 1,
+    explanation:
+      "Rightsizing involves matching AWS instance types and sizes to your actual workload performance and capacity requirements to optimize both cost and performance.",
+  },
+  {
+    question:
+      "What is the main difference between Bring Your Own License (BYOL) and included license models?",
+    options: [
+      "BYOL is always more expensive",
+      "BYOL allows you to use existing licenses while included licenses are provided by AWS",
+      "Included licenses work only on-premises",
+      "BYOL requires special hardware",
+    ],
+    correct: 1,
+    explanation:
+      "BYOL allows you to use your existing software licenses in the cloud, while included license models provide the licensing as part of the AWS service, which can affect overall cost considerations.",
+  },
+
+  // Well-Architected Framework - Domain 1: Cloud Concepts
   {
     question:
       "What is the AWS Well-Architected Framework pillar that focuses on the ability to recover from failures?",
@@ -111,7 +191,7 @@ export const questionBank: Question[] = [
       "The Reliability pillar includes designing for failure and implementing automated recovery procedures.",
   },
 
-  // Security & IAM
+  // Security & IAM - Domain 2: Security and Compliance
   {
     question: "What does the AWS Shared Responsibility Model define?",
     options: [
@@ -154,13 +234,52 @@ export const questionBank: Question[] = [
     question: "What is the root user in an AWS account?",
     options: [
       "A service account",
-      "The initial user with complete access",
+      "The initial user with complete access to all AWS services and resources",
       "A read-only user",
       "A temporary user",
     ],
     correct: 1,
     explanation:
-      "The root user is the initial user created with an AWS account that has complete access to all services and resources.",
+      "The root user is the initial user created with an AWS account that has complete access to all services and resources. It should be secured with MFA and used sparingly for account-level tasks only.",
+  },
+  {
+    question:
+      "Which of the following tasks can ONLY be performed by the AWS account root user?",
+    options: [
+      "Creating IAM users and policies",
+      "Changing the account's support plan and closing the account",
+      "Launching EC2 instances",
+      "Creating S3 buckets",
+    ],
+    correct: 1,
+    explanation:
+      "Only the root user can perform account-level tasks such as changing the support plan, closing the AWS account, changing the account email address, and modifying account settings that affect billing.",
+  },
+  {
+    question:
+      "What is the MOST important security practice for the AWS root user account?",
+    options: [
+      "Use it for daily administrative tasks",
+      "Enable multi-factor authentication (MFA) and avoid regular use",
+      "Share the credentials with your team",
+      "Store the password in a text file",
+    ],
+    correct: 1,
+    explanation:
+      "The root user should have MFA enabled and should only be used for tasks that specifically require root user access. For daily operations, use IAM users with appropriate permissions following the principle of least privilege.",
+  },
+  {
+    question:
+      "Which method provides the BEST protection for the AWS root user account?",
+    options: [
+      "Complex password only",
+      "MFA device plus strong password and limited use",
+      "API access keys for automation",
+      "Shared access across the team",
+    ],
+    correct: 1,
+    explanation:
+      "The best protection combines a strong unique password, MFA device, and limiting root user access to only those tasks that specifically require root user privileges, such as account closure or support plan changes.",
   },
   {
     question: "Which AWS service provides encryption key management?",
@@ -169,8 +288,46 @@ export const questionBank: Question[] = [
     explanation:
       "AWS Key Management Service (KMS) is a managed service that makes it easy to create and control encryption keys.",
   },
+  {
+    question:
+      "What is AWS IAM Identity Center (formerly AWS Single Sign-On) used for?",
+    options: [
+      "Managing encryption keys",
+      "Centrally managing single sign-on access to multiple AWS accounts and applications",
+      "Creating VPC networks",
+      "Monitoring application performance",
+    ],
+    correct: 1,
+    explanation:
+      "AWS IAM Identity Center provides single sign-on (SSO) access to multiple AWS accounts and cloud applications from a central location, simplifying access management across organizations.",
+  },
+  {
+    question: "What is federated identity management in AWS?",
+    options: [
+      "Creating multiple IAM users for each person",
+      "Allowing users to access AWS using credentials from external identity providers",
+      "Using only root user access",
+      "Requiring separate passwords for each service",
+    ],
+    correct: 1,
+    explanation:
+      "Federated identity management allows users to access AWS services using credentials from external identity providers (like corporate Active Directory, Google, or Facebook) without creating separate IAM users.",
+  },
+  {
+    question:
+      "Which authentication method provides an additional layer of security beyond username and password?",
+    options: [
+      "API keys",
+      "Multi-factor authentication (MFA)",
+      "Security groups",
+      "IAM roles",
+    ],
+    correct: 1,
+    explanation:
+      "Multi-factor authentication (MFA) adds an extra layer of security by requiring users to provide a time-based token from an MFA device in addition to their username and password.",
+  },
 
-  // Networking
+  // Networking - Domain 3: Cloud Technology and Services
   {
     question: "What is Amazon VPC?",
     options: [
@@ -227,7 +384,7 @@ export const questionBank: Question[] = [
       "Amazon Route 53 is a scalable DNS web service designed to route end users to internet applications.",
   },
 
-  // Pricing & Billing
+  // Pricing & Billing - Domain 4: Billing, Pricing, and Support
   {
     question:
       "Which pricing model allows you to pay for compute capacity by the hour with no long-term commitments?",
@@ -616,6 +773,45 @@ export const questionBank: Question[] = [
       "AWS Snowball is a data transport solution using secure devices to transfer large amounts of data into and out of AWS.",
   },
   {
+    question:
+      "What is database replication commonly used for in migration strategies?",
+    options: [
+      "To backup data only",
+      "To maintain data synchronization between source and target databases during migration",
+      "To reduce database size",
+      "To improve query performance",
+    ],
+    correct: 1,
+    explanation:
+      "Database replication maintains data synchronization between the source (on-premises) and target (AWS) databases during migration, enabling minimal downtime cutover and ensuring data consistency.",
+  },
+  {
+    question:
+      "Which AWS Snow Family device is best suited for edge computing and local data processing?",
+    options: [
+      "AWS Snowball",
+      "AWS Snowball Edge",
+      "AWS Snowmobile",
+      "AWS SnowCone",
+    ],
+    correct: 1,
+    explanation:
+      "AWS Snowball Edge provides both data migration capabilities and edge computing functions, allowing you to run applications locally and process data before sending it to AWS.",
+  },
+  {
+    question:
+      "What is a key migration benefit of using AWS managed services instead of self-managed services?",
+    options: [
+      "Higher costs but better performance",
+      "Reduced operational overhead and automatic patching",
+      "Less security features",
+      "Vendor lock-in advantages",
+    ],
+    correct: 1,
+    explanation:
+      "AWS managed services (like RDS, ECS, DynamoDB) reduce operational overhead by handling patching, scaling, backups, and maintenance automatically, allowing teams to focus on applications rather than infrastructure management.",
+  },
+  {
     question: "What is AWS CodeDeploy?",
     options: [
       "A source control service",
@@ -692,6 +888,42 @@ export const questionBank: Question[] = [
     correct: 3,
     explanation:
       "When choosing an AWS Region, consider data sovereignty, latency, service availability, and costs.",
+  },
+  {
+    question: "What is the primary purpose of AWS Local Zones?",
+    options: [
+      "To provide backup storage",
+      "To bring AWS services closer to end users in specific geographic areas",
+      "To reduce AWS costs",
+      "To increase global availability",
+    ],
+    correct: 1,
+    explanation:
+      "AWS Local Zones bring AWS compute, storage, database, and other services closer to end users in specific geographic locations to provide single-digit millisecond latency for latency-sensitive applications.",
+  },
+  {
+    question: "What type of applications benefit MOST from AWS Wavelength?",
+    options: [
+      "Batch processing applications",
+      "Ultra-low latency applications for mobile and connected devices",
+      "Data warehousing applications",
+      "Static website hosting",
+    ],
+    correct: 1,
+    explanation:
+      "AWS Wavelength brings AWS services to the edge of 5G networks, providing ultra-low latency for mobile applications, AR/VR, IoT, and machine learning applications that require real-time responsiveness.",
+  },
+  {
+    question: "How do AWS Local Zones differ from standard Availability Zones?",
+    options: [
+      "Local Zones are cheaper",
+      "Local Zones provide ultra-low latency by placing infrastructure closer to specific populations",
+      "Local Zones have more services available",
+      "Local Zones are only for government use",
+    ],
+    correct: 1,
+    explanation:
+      "AWS Local Zones are designed to bring AWS infrastructure and services closer to large population centers, metropolitan areas, and specific geographic locations to provide single-digit millisecond latency that standard Availability Zones cannot achieve.",
   },
 
   // Auto Scaling & Load Balancing
@@ -790,13 +1022,37 @@ export const questionBank: Question[] = [
     question: "What does AWS Artifact provide?",
     options: [
       "Application deployment",
-      "Compliance reports and agreements",
+      "On-demand access to compliance reports and agreements",
       "Cost analysis",
       "Performance monitoring",
     ],
     correct: 1,
     explanation:
-      "AWS Artifact provides on-demand access to AWS compliance reports and online agreements.",
+      "AWS Artifact provides on-demand access to AWS compliance reports (like SOC reports, PCI compliance documentation) and online agreements to help with compliance audits and assessments.",
+  },
+  {
+    question: "Which compliance documents can you access through AWS Artifact?",
+    options: [
+      "Only internal AWS documentation",
+      "SOC reports, PCI DSS documentation, and ISO certifications",
+      "Customer usage reports",
+      "Performance benchmarks",
+    ],
+    correct: 1,
+    explanation:
+      "AWS Artifact provides access to important compliance documents including SOC (Service Organization Control) reports, PCI DSS documentation, ISO certifications, and other third-party audit reports.",
+  },
+  {
+    question: "How does AWS Artifact help with compliance audits?",
+    options: [
+      "It automatically makes your applications compliant",
+      "It provides self-service access to compliance documentation for auditors",
+      "It performs compliance testing on your behalf",
+      "It modifies your infrastructure to meet compliance",
+    ],
+    correct: 1,
+    explanation:
+      "AWS Artifact enables self-service access to compliance reports and documentation that customers need for their compliance audits and regulatory requirements, without requiring manual requests to AWS.",
   },
   {
     question:
@@ -835,14 +1091,50 @@ export const questionBank: Question[] = [
   {
     question: "What is AWS Organizations used for?",
     options: [
-      "Managing multiple AWS accounts",
+      "Centrally managing and governing multiple AWS accounts",
       "Organizing S3 buckets",
       "Managing IAM users",
       "Organizing EC2 instances",
     ],
     correct: 0,
     explanation:
-      "AWS Organizations helps you centrally manage and govern multiple AWS accounts.",
+      "AWS Organizations helps you centrally manage and govern multiple AWS accounts, enabling consolidated billing, account creation, and policy-based management across an organization.",
+  },
+  {
+    question: "What is consolidated billing in AWS Organizations?",
+    options: [
+      "Separate bills for each account",
+      "Combined billing across multiple AWS accounts with potential volume discounts",
+      "Monthly payment plans",
+      "Automatic bill payment",
+    ],
+    correct: 1,
+    explanation:
+      "Consolidated billing combines usage across all accounts in an organization into a single bill, potentially providing volume discounts and simplifying billing management for multiple AWS accounts.",
+  },
+  {
+    question: "What are cost allocation tags used for in AWS?",
+    options: [
+      "Improving performance",
+      "Organizing and tracking AWS costs by categorizing resources",
+      "Enhancing security",
+      "Monitoring network traffic",
+    ],
+    correct: 1,
+    explanation:
+      "Cost allocation tags allow you to organize and track AWS costs by categorizing resources (like department, project, or environment), enabling detailed cost reporting and budget allocation across different business units.",
+  },
+  {
+    question: "How do AWS Organizations help with volume discounts?",
+    options: [
+      "They provide automatic discounts",
+      "Usage from all member accounts is combined for volume pricing tiers",
+      "They negotiate lower rates",
+      "They provide free services",
+    ],
+    correct: 1,
+    explanation:
+      "AWS Organizations consolidate usage across all member accounts, which can help organizations reach higher volume pricing tiers more quickly and benefit from volume discounts that might not be available to individual accounts.",
   },
   {
     question:
@@ -1254,6 +1546,43 @@ export const questionBank: Question[] = [
     explanation:
       "Amazon Forecast is a fully managed service that uses machine learning to deliver highly accurate forecasts for time-series data.",
   },
+  {
+    question: "What is Amazon Kendra used for?",
+    options: [
+      "Image recognition",
+      "Intelligent document search using natural language",
+      "Speech-to-text conversion",
+      "Video analysis",
+    ],
+    correct: 1,
+    explanation:
+      "Amazon Kendra is an intelligent search service powered by machine learning that allows users to search across documents and content using natural language queries.",
+  },
+  {
+    question:
+      "Which AWS service can extract text and data from documents and forms?",
+    options: [
+      "Amazon Polly",
+      "Amazon Textract",
+      "Amazon Transcribe",
+      "Amazon Comprehend",
+    ],
+    correct: 1,
+    explanation:
+      "Amazon Textract uses machine learning to automatically extract text, handwriting, and data from scanned documents, going beyond simple optical character recognition (OCR) to identify and extract data from forms and tables.",
+  },
+  {
+    question: "What is Amazon Translate used for?",
+    options: [
+      "Converting speech to text",
+      "Language translation using neural machine translation",
+      "Image recognition",
+      "Data encryption",
+    ],
+    correct: 1,
+    explanation:
+      "Amazon Translate is a neural machine translation service that delivers fast, high-quality, and affordable language translation between different languages.",
+  },
 
   // Analytics & Big Data
   {
@@ -1585,12 +1914,38 @@ export const questionBank: Question[] = [
     options: [
       "24/7 phone support",
       "Technical support cases",
-      "Access to forums and documentation",
+      "Access to forums, documentation, and AWS Personal Health Dashboard",
       "Dedicated support team",
     ],
     correct: 2,
     explanation:
-      "AWS Basic Support includes access to customer service, documentation, whitepapers, support forums, and AWS Personal Health Dashboard.",
+      "AWS Basic Support includes access to customer service, documentation, whitepapers, support forums, AWS Personal Health Dashboard, and basic AWS Trusted Advisor checks at no additional cost.",
+  },
+  {
+    question:
+      "Which AWS support plan provides access to AWS Trusted Advisor with all checks?",
+    options: [
+      "Basic",
+      "Developer",
+      "Business and Enterprise plans",
+      "All support plans",
+    ],
+    correct: 2,
+    explanation:
+      "Only Business and Enterprise support plans provide access to the full set of AWS Trusted Advisor checks. Basic and Developer plans have access to a limited set of core checks.",
+  },
+  {
+    question:
+      "What is the primary difference between AWS Business Support and AWS Enterprise Support?",
+    options: [
+      "Response times only",
+      "Enterprise includes Technical Account Manager and faster response times",
+      "Price only",
+      "Enterprise is for government customers only",
+    ],
+    correct: 1,
+    explanation:
+      "AWS Enterprise Support includes a dedicated Technical Account Manager (TAM), faster response times (15 minutes for critical issues), infrastructure event management, and additional architectural guidance beyond what Business Support provides.",
   },
 
   // Migration & Transfer
@@ -1727,6 +2082,31 @@ export const questionBank: Question[] = [
     correct: 1,
     explanation:
       "AWS App Runner is a fully managed service that makes it easy for developers to quickly deploy containerized web applications and APIs at scale.",
+  },
+  {
+    question: "What is AWS Outposts used for?",
+    options: [
+      "Content delivery",
+      "Bringing AWS infrastructure and services to on-premises facilities",
+      "Database backup",
+      "Network monitoring",
+    ],
+    correct: 1,
+    explanation:
+      "AWS Outposts brings native AWS services, infrastructure, and operating models to virtually any data center, co-location space, or on-premises facility for a truly consistent hybrid experience.",
+  },
+  {
+    question:
+      "Which AWS service provides a fully managed Apache Kafka service?",
+    options: [
+      "Amazon Kinesis",
+      "Amazon MSK (Managed Streaming for Apache Kafka)",
+      "Amazon SQS",
+      "Amazon EventBridge",
+    ],
+    correct: 1,
+    explanation:
+      "Amazon MSK (Managed Streaming for Apache Kafka) is a fully managed service that makes it easy to build and run applications that use Apache Kafka to process streaming data.",
   },
 
   // Internet of Things (IoT)

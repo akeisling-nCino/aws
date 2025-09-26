@@ -1,73 +1,86 @@
-# React + TypeScript + Vite
+# AWS Cloud Practitioner (CLF-C02) Quiz App 🎯
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A comprehensive practice quiz application for the AWS Certified Cloud Practitioner (CLF-C02) certification exam.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **400+ High-Quality Questions**: Extensive question bank covering all CLF-C02 exam domains
+- **Random Quiz Generation**: Each quiz presents 20 randomly selected questions
+- **Detailed Explanations**: Every question includes comprehensive explanations to help you learn
+- **Answer Shuffling**: Question options are randomized to prevent memorization
+- **Progress Tracking**: Real-time scoring and progress indicators
+- **Modern UI**: Clean, responsive design optimized for study sessions
 
-## React Compiler
+## Exam Coverage
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Questions cover all four CLF-C02 domains:
 
-## Expanding the ESLint configuration
+- **Cloud Concepts** (24%)
+- **Security and Compliance** (30%)
+- **Cloud Technology and Services** (34%)
+- **Billing, Pricing, and Support** (12%)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Getting Started
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Prerequisites
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- Node.js (v16 or higher)
+- npm or yarn
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Installation
+
+```bash
+# Clone the repository
+git clone <repository-url>
+
+# Navigate to the project directory
+cd aws-clf-quiz/quiz-app
+
+# Install dependencies
+npm install
+
+# Start the development server
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Building for Production
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+```bash
+# Build the application
+npm run build
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+# Preview the production build
+npm run preview
 ```
+
+## Usage
+
+1. Click "Start Quiz" to begin a new 20-question practice session
+2. Select your answer for each question
+3. Review the explanation after each question
+4. View your final score and performance summary
+5. Retake quizzes as many times as needed for practice
+
+## Technology Stack
+
+- **React 18** with TypeScript
+- **Vite** for fast development and building
+- **CSS3** for responsive styling
+- **ESLint** for code quality
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit pull requests with:
+
+- Additional questions and explanations
+- UI/UX improvements
+- Bug fixes
+- Feature enhancements
+
+## License
+
+This project is for educational purposes only. AWS and Cloud Practitioner are trademarks of Amazon Web Services, Inc.
+
+---
+
+**Good luck with your AWS Cloud Practitioner certification! 🚀**
