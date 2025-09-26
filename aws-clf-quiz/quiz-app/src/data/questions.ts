@@ -980,6 +980,914 @@ export const questionBank: Question[] = [
     explanation:
       "AWS Secrets Manager helps protect secrets needed to access applications, services, and IT resources.",
   },
+
+  // Additional Core Services - Compute
+  {
+    question:
+      "Which AWS service allows you to run containerized applications without managing servers?",
+    options: ["Amazon ECS with EC2", "AWS Fargate", "Amazon EKS", "AWS Lambda"],
+    correct: 1,
+    explanation:
+      "AWS Fargate is a serverless compute engine for containers that works with both Amazon ECS and EKS, removing the need to provision and manage servers.",
+  },
+  {
+    question: "What is the maximum execution time for an AWS Lambda function?",
+    options: ["5 minutes", "10 minutes", "15 minutes", "30 minutes"],
+    correct: 2,
+    explanation:
+      "AWS Lambda functions can run for a maximum of 15 minutes (900 seconds) before timing out.",
+  },
+  {
+    question:
+      "Which AWS service provides scalable virtual desktop infrastructure?",
+    options: [
+      "Amazon WorkSpaces",
+      "Amazon AppStream 2.0",
+      "AWS WorkLink",
+      "Amazon WorkDocs",
+    ],
+    correct: 0,
+    explanation:
+      "Amazon WorkSpaces is a managed, secure Desktop-as-a-Service (DaaS) solution that provides cloud-based virtual desktops.",
+  },
+  {
+    question: "What is AWS Batch used for?",
+    options: [
+      "Streaming data processing",
+      "Running batch computing workloads",
+      "Real-time analytics",
+      "Container orchestration",
+    ],
+    correct: 1,
+    explanation:
+      "AWS Batch enables developers to easily and efficiently run hundreds to thousands of batch computing jobs on AWS.",
+  },
+
+  // Storage Services - Advanced
+  {
+    question: "Which AWS service provides a hybrid cloud storage solution?",
+    options: [
+      "AWS DataSync",
+      "AWS Storage Gateway",
+      "AWS Snowball",
+      "Amazon EFS",
+    ],
+    correct: 1,
+    explanation:
+      "AWS Storage Gateway is a hybrid cloud storage service that connects on-premises environments to AWS cloud storage services.",
+  },
+  {
+    question: "What is the minimum storage size for Amazon EBS gp3 volumes?",
+    options: ["1 GB", "1 GiB", "10 GiB", "20 GiB"],
+    correct: 1,
+    explanation:
+      "Amazon EBS gp3 volumes can be created with a minimum size of 1 GiB and can scale up to 16 TiB.",
+  },
+  {
+    question:
+      "Which S3 storage class automatically moves objects between access tiers?",
+    options: [
+      "S3 Standard",
+      "S3 Intelligent-Tiering",
+      "S3 Glacier",
+      "S3 One Zone-IA",
+    ],
+    correct: 1,
+    explanation:
+      "S3 Intelligent-Tiering automatically moves objects between two access tiers when access patterns change, optimizing costs.",
+  },
+  {
+    question: "What is the data transfer speed of AWS Snowball Edge?",
+    options: [
+      "Up to 100 TB",
+      "Up to 80 TB",
+      "Up to 100 TB in 10 days",
+      "1 TB per day",
+    ],
+    correct: 2,
+    explanation:
+      "AWS Snowball Edge can transfer up to 100 TB of data and typically takes about 10 days for the entire process including shipping.",
+  },
+
+  // Networking - Advanced
+  {
+    question: "What is the maximum number of VPCs per AWS region by default?",
+    options: ["5", "10", "20", "100"],
+    correct: 0,
+    explanation:
+      "By default, you can create up to 5 VPCs per AWS region, though this limit can be increased by contacting AWS support.",
+  },
+  {
+    question:
+      "Which AWS service helps establish a dedicated network connection from on-premises to AWS?",
+    options: [
+      "VPC Peering",
+      "AWS Direct Connect",
+      "VPN Gateway",
+      "Internet Gateway",
+    ],
+    correct: 1,
+    explanation:
+      "AWS Direct Connect provides a dedicated network connection from your premises to AWS, bypassing the internet for better performance and security.",
+  },
+  {
+    question: "What is AWS Transit Gateway used for?",
+    options: [
+      "Load balancing",
+      "Connecting multiple VPCs and on-premises networks",
+      "DNS resolution",
+      "Content delivery",
+    ],
+    correct: 1,
+    explanation:
+      "AWS Transit Gateway acts as a hub that controls how traffic is routed among all connected networks, which act like spokes.",
+  },
+  {
+    question:
+      "Which AWS service provides DDoS protection at the network and transport layers?",
+    options: [
+      "AWS WAF",
+      "AWS Shield Standard",
+      "AWS Shield Advanced",
+      "Amazon GuardDuty",
+    ],
+    correct: 1,
+    explanation:
+      "AWS Shield Standard provides protection against most common, frequently occurring network and transport layer DDoS attacks.",
+  },
+
+  // Database Services - Advanced
+  {
+    question: "What is the read replica limit for Amazon RDS MySQL?",
+    options: ["5", "10", "15", "20"],
+    correct: 2,
+    explanation:
+      "Amazon RDS for MySQL supports up to 15 read replicas for improved read performance and availability.",
+  },
+  {
+    question: "Which AWS database service is best for graph databases?",
+    options: [
+      "Amazon DynamoDB",
+      "Amazon RDS",
+      "Amazon Neptune",
+      "Amazon Redshift",
+    ],
+    correct: 2,
+    explanation:
+      "Amazon Neptune is a fully managed graph database service that supports both Property Graph and RDF graph models.",
+  },
+  {
+    question: "What is Amazon DynamoDB Accelerator (DAX)?",
+    options: [
+      "A backup service",
+      "An in-memory cache",
+      "A migration tool",
+      "A monitoring service",
+    ],
+    correct: 1,
+    explanation:
+      "Amazon DynamoDB Accelerator (DAX) is a fully managed, in-memory cache for DynamoDB that provides microsecond latency.",
+  },
+  {
+    question:
+      "Which RDS database engine supports cross-region automated backups?",
+    options: [
+      "MySQL only",
+      "All RDS engines",
+      "PostgreSQL only",
+      "Oracle only",
+    ],
+    correct: 1,
+    explanation:
+      "All Amazon RDS database engines support cross-region automated backups for disaster recovery and compliance requirements.",
+  },
+
+  // Security - Advanced
+  {
+    question:
+      "What is the maximum number of security groups per VPC by default?",
+    options: ["100", "200", "500", "2500"],
+    correct: 3,
+    explanation:
+      "By default, you can create up to 2,500 security groups per VPC, with each security group supporting up to 60 inbound and 60 outbound rules.",
+  },
+  {
+    question: "Which AWS service helps you manage SSL/TLS certificates?",
+    options: [
+      "AWS KMS",
+      "AWS Certificate Manager",
+      "AWS Secrets Manager",
+      "AWS CloudHSM",
+    ],
+    correct: 1,
+    explanation:
+      "AWS Certificate Manager (ACM) handles the complexity of creating and managing public SSL/TLS certificates for AWS-based websites and applications.",
+  },
+  {
+    question: "What is AWS CloudHSM used for?",
+    options: [
+      "DNS management",
+      "Hardware security modules",
+      "Content delivery",
+      "Load balancing",
+    ],
+    correct: 1,
+    explanation:
+      "AWS CloudHSM provides hardware security modules in the AWS Cloud for generating, storing, and managing cryptographic keys.",
+  },
+  {
+    question:
+      "Which AWS service provides security assessment and vulnerability management?",
+    options: ["AWS Config", "Amazon Inspector", "AWS CloudTrail", "AWS X-Ray"],
+    correct: 1,
+    explanation:
+      "Amazon Inspector is an automated security assessment service that helps improve the security and compliance of applications deployed on AWS.",
+  },
+
+  // Machine Learning & AI
+  {
+    question:
+      "Which AWS service provides natural language processing capabilities?",
+    options: [
+      "Amazon Rekognition",
+      "Amazon Comprehend",
+      "Amazon Polly",
+      "Amazon Lex",
+    ],
+    correct: 1,
+    explanation:
+      "Amazon Comprehend is a natural language processing (NLP) service that uses machine learning to find insights and relationships in text.",
+  },
+  {
+    question: "What is Amazon Polly used for?",
+    options: [
+      "Image recognition",
+      "Text-to-speech",
+      "Speech-to-text",
+      "Language translation",
+    ],
+    correct: 1,
+    explanation:
+      "Amazon Polly is a service that turns text into lifelike speech, allowing you to create applications that talk.",
+  },
+  {
+    question: "Which AWS service provides automatic speech recognition?",
+    options: [
+      "Amazon Polly",
+      "Amazon Transcribe",
+      "Amazon Translate",
+      "Amazon Lex",
+    ],
+    correct: 1,
+    explanation:
+      "Amazon Transcribe is an automatic speech recognition (ASR) service that makes it easy to convert speech to text.",
+  },
+  {
+    question: "What is Amazon Forecast used for?",
+    options: [
+      "Weather prediction",
+      "Time-series forecasting",
+      "Image analysis",
+      "Text processing",
+    ],
+    correct: 1,
+    explanation:
+      "Amazon Forecast is a fully managed service that uses machine learning to deliver highly accurate forecasts for time-series data.",
+  },
+
+  // Analytics & Big Data
+  {
+    question: "What is the maximum size of a single Amazon Redshift cluster?",
+    options: ["2 PB", "8 PB", "16 PB", "No limit"],
+    correct: 1,
+    explanation:
+      "Amazon Redshift clusters can scale up to 8 PB of compressed SSD storage using RA3 node types with managed storage.",
+  },
+  {
+    question: "Which AWS service is used for real-time stream processing?",
+    options: [
+      "Amazon Kinesis Data Analytics",
+      "Amazon EMR",
+      "AWS Glue",
+      "Amazon Athena",
+    ],
+    correct: 0,
+    explanation:
+      "Amazon Kinesis Data Analytics is used for processing and analyzing streaming data in real-time using SQL or Apache Flink.",
+  },
+  {
+    question: "What is AWS Lake Formation used for?",
+    options: [
+      "Creating data warehouses",
+      "Building data lakes",
+      "Real-time analytics",
+      "Data backup",
+    ],
+    correct: 1,
+    explanation:
+      "AWS Lake Formation makes it easy to set up a secure data lake in days, centralizing data from databases, object storage, and streaming sources.",
+  },
+  {
+    question: "Which service allows you to query data in S3 using SQL?",
+    options: ["Amazon Redshift", "Amazon Athena", "Amazon EMR", "AWS Glue"],
+    correct: 1,
+    explanation:
+      "Amazon Athena is an interactive query service that makes it easy to analyze data in Amazon S3 using standard SQL.",
+  },
+
+  // Cost Management & Billing
+  {
+    question: "What is the AWS Free Tier usage limit for Amazon S3?",
+    options: ["5 GB", "15 GB", "25 GB", "50 GB"],
+    correct: 0,
+    explanation:
+      "The AWS Free Tier includes 5 GB of Amazon S3 standard storage for 12 months with 20,000 get requests and 2,000 put requests.",
+  },
+  {
+    question: "Which AWS service helps you set up budget alerts?",
+    options: [
+      "AWS Cost Explorer",
+      "AWS Budgets",
+      "AWS Billing Dashboard",
+      "AWS Cost and Usage Report",
+    ],
+    correct: 1,
+    explanation:
+      "AWS Budgets gives you the ability to set custom budgets that alert you when your costs or usage exceed (or are forecasted to exceed) your budgeted amount.",
+  },
+  {
+    question:
+      "What is the savings percentage for 3-year Reserved Instances compared to On-Demand?",
+    options: ["Up to 50%", "Up to 60%", "Up to 72%", "Up to 90%"],
+    correct: 2,
+    explanation:
+      "3-year Reserved Instances can provide up to 72% savings compared to On-Demand pricing, depending on the instance type and payment option.",
+  },
+  {
+    question:
+      "Which pricing model offers the highest potential savings but with interruption risk?",
+    options: [
+      "On-Demand",
+      "Reserved Instances",
+      "Spot Instances",
+      "Dedicated Hosts",
+    ],
+    correct: 2,
+    explanation:
+      "Spot Instances can offer up to 90% savings compared to On-Demand pricing but can be interrupted when AWS needs the capacity back.",
+  },
+
+  // Management & Governance
+  {
+    question: "What is AWS Service Catalog used for?",
+    options: [
+      "Cost tracking",
+      "Service governance and compliance",
+      "Performance monitoring",
+      "Security scanning",
+    ],
+    correct: 1,
+    explanation:
+      "AWS Service Catalog allows organizations to create and manage catalogs of IT services that are approved for use on AWS.",
+  },
+  {
+    question: "Which AWS service provides resource-level permissions?",
+    options: [
+      "AWS Organizations",
+      "AWS IAM",
+      "AWS Config",
+      "AWS CloudFormation",
+    ],
+    correct: 1,
+    explanation:
+      "AWS Identity and Access Management (IAM) enables you to manage access to AWS services and resources securely with fine-grained permissions.",
+  },
+  {
+    question: "What is AWS Personal Health Dashboard?",
+    options: [
+      "Health monitoring for EC2",
+      "Account-specific AWS service health information",
+      "Application performance monitoring",
+      "Cost optimization recommendations",
+    ],
+    correct: 1,
+    explanation:
+      "AWS Personal Health Dashboard provides alerts and remediation guidance when AWS is experiencing events that may impact your AWS resources.",
+  },
+  {
+    question: "Which service helps you track API calls made to AWS services?",
+    options: ["AWS Config", "AWS CloudTrail", "Amazon CloudWatch", "AWS X-Ray"],
+    correct: 1,
+    explanation:
+      "AWS CloudTrail is a service that enables governance, compliance, operational auditing, and risk auditing by logging API calls.",
+  },
+
+  // Application Integration
+  {
+    question: "What is the maximum retention period for Amazon SQS messages?",
+    options: ["7 days", "14 days", "30 days", "1 year"],
+    correct: 1,
+    explanation:
+      "Amazon SQS can retain messages for up to 14 days, with the default retention period being 4 days.",
+  },
+  {
+    question: "Which AWS service is used for workflow orchestration?",
+    options: [
+      "AWS Step Functions",
+      "Amazon SWF",
+      "AWS Batch",
+      "Amazon EventBridge",
+    ],
+    correct: 0,
+    explanation:
+      "AWS Step Functions lets you coordinate multiple AWS services into serverless workflows so you can build and update apps quickly.",
+  },
+  {
+    question: "What is Amazon EventBridge used for?",
+    options: [
+      "Load balancing",
+      "Event-driven architecture",
+      "Data transformation",
+      "File synchronization",
+    ],
+    correct: 1,
+    explanation:
+      "Amazon EventBridge is a serverless event bus that makes it easier to build event-driven applications at scale using events generated from your applications, SaaS applications, and AWS services.",
+  },
+  {
+    question: "Which service provides publish-subscribe messaging?",
+    options: ["Amazon SQS", "Amazon SNS", "AWS Step Functions", "Amazon MQ"],
+    correct: 1,
+    explanation:
+      "Amazon Simple Notification Service (SNS) is a fully managed messaging service for both application-to-application (A2A) and application-to-person (A2P) communication.",
+  },
+
+  // Edge & Content Delivery
+  {
+    question: "How many edge locations does Amazon CloudFront have globally?",
+    options: ["Over 100", "Over 200", "Over 400", "Over 500"],
+    correct: 2,
+    explanation:
+      "Amazon CloudFront has over 400+ points of presence (edge locations and regional edge caches) in 90+ cities across 40+ countries.",
+  },
+  {
+    question: "What is AWS Global Accelerator used for?",
+    options: [
+      "Content caching",
+      "Improving application performance",
+      "Load balancing",
+      "DNS resolution",
+    ],
+    correct: 1,
+    explanation:
+      "AWS Global Accelerator improves the performance of your applications for local and global users by routing traffic through AWS's global network infrastructure.",
+  },
+  {
+    question: "Which AWS service helps optimize last-mile delivery of content?",
+    options: [
+      "AWS Direct Connect",
+      "Amazon CloudFront",
+      "AWS Global Accelerator",
+      "Elastic Load Balancing",
+    ],
+    correct: 1,
+    explanation:
+      "Amazon CloudFront optimizes last-mile delivery by caching content at edge locations closer to end users.",
+  },
+  {
+    question:
+      "What is the difference between CloudFront and Global Accelerator?",
+    options: [
+      "No difference",
+      "CloudFront caches content, Global Accelerator improves network performance",
+      "Global Accelerator is cheaper",
+      "CloudFront only works with S3",
+    ],
+    correct: 1,
+    explanation:
+      "CloudFront caches cacheable content at edge locations, while Global Accelerator improves performance for both cacheable and non-cacheable content by using AWS's global network.",
+  },
+
+  // Disaster Recovery & Backup
+  {
+    question:
+      "What is the Recovery Time Objective (RTO) for Multi-AZ RDS deployments?",
+    options: ["1-2 minutes", "5-10 minutes", "30 minutes", "1 hour"],
+    correct: 0,
+    explanation:
+      "Multi-AZ RDS deployments typically have an RTO of 1-2 minutes for automatic failover to the standby instance.",
+  },
+  {
+    question: "Which AWS service provides automated backup for EC2 instances?",
+    options: [
+      "AWS Backup",
+      "Amazon EBS Snapshots",
+      "AWS Storage Gateway",
+      "AWS DataSync",
+    ],
+    correct: 0,
+    explanation:
+      "AWS Backup is a centralized backup service that automatically backs up data across AWS services including EC2, EBS, RDS, and more.",
+  },
+  {
+    question: "What is the minimum frequency for automated RDS backups?",
+    options: ["Every hour", "Every 8 hours", "Daily", "Weekly"],
+    correct: 2,
+    explanation:
+      "RDS automated backups occur daily during the preferred backup window, with a backup retention period of 1-35 days.",
+  },
+  {
+    question: "Which disaster recovery strategy has the lowest RTO?",
+    options: [
+      "Backup and restore",
+      "Pilot light",
+      "Warm standby",
+      "Multi-site active/active",
+    ],
+    correct: 3,
+    explanation:
+      "Multi-site active/active has the lowest RTO as traffic is already being served from multiple sites, allowing near-instantaneous failover.",
+  },
+
+  // Compliance & Governance
+  {
+    question:
+      "Which compliance standard is required for payment card industry?",
+    options: ["SOC 2", "HIPAA", "PCI DSS", "FedRAMP"],
+    correct: 2,
+    explanation:
+      "PCI DSS (Payment Card Industry Data Security Standard) is required for organizations that handle credit card transactions.",
+  },
+  {
+    question: "What is AWS Artifact primarily used for?",
+    options: [
+      "Cost reporting",
+      "Compliance documentation",
+      "Performance monitoring",
+      "Security scanning",
+    ],
+    correct: 1,
+    explanation:
+      "AWS Artifact provides on-demand access to AWS compliance documentation and AWS agreements such as SOC reports, PCI documents, and ISO certifications.",
+  },
+  {
+    question:
+      "Which AWS service helps ensure resource compliance with organizational policies?",
+    options: ["AWS Config", "AWS CloudTrail", "AWS IAM", "AWS Organizations"],
+    correct: 0,
+    explanation:
+      "AWS Config continuously monitors and records AWS resource configurations and allows you to automate compliance checking against desired configurations.",
+  },
+  {
+    question: "What is AWS Control Tower used for?",
+    options: [
+      "Cost management",
+      "Multi-account governance",
+      "Performance optimization",
+      "Security monitoring",
+    ],
+    correct: 1,
+    explanation:
+      "AWS Control Tower provides a single location to set up your multi-account AWS environment and govern your AWS workloads with rules for security, operations, and compliance.",
+  },
+
+  // Support & Professional Services
+  {
+    question: "Which support plan includes access to AWS Support API?",
+    options: ["Basic", "Developer", "Business", "Enterprise"],
+    correct: 2,
+    explanation:
+      "The Business and Enterprise support plans include access to the AWS Support API for programmatic case management.",
+  },
+  {
+    question:
+      "What is the response time for production system down issues in Enterprise support?",
+    options: ["15 minutes", "30 minutes", "1 hour", "4 hours"],
+    correct: 0,
+    explanation:
+      "Enterprise support provides a 15-minute response time for production system down issues (critical business impact).",
+  },
+  {
+    question:
+      "Which AWS service provides architectural guidance and best practices?",
+    options: [
+      "AWS Well-Architected Tool",
+      "AWS Trusted Advisor",
+      "AWS Config",
+      "AWS Inspector",
+    ],
+    correct: 0,
+    explanation:
+      "The AWS Well-Architected Tool helps you review your architectures against AWS best practices and provides guidance for improvement.",
+  },
+  {
+    question: "What is included in AWS Basic Support?",
+    options: [
+      "24/7 phone support",
+      "Technical support cases",
+      "Access to forums and documentation",
+      "Dedicated support team",
+    ],
+    correct: 2,
+    explanation:
+      "AWS Basic Support includes access to customer service, documentation, whitepapers, support forums, and AWS Personal Health Dashboard.",
+  },
+
+  // Migration & Transfer
+  {
+    question: "Which AWS service helps migrate on-premises file shares to AWS?",
+    options: [
+      "AWS DataSync",
+      "AWS Storage Gateway",
+      "AWS Server Migration Service",
+      "AWS Application Discovery Service",
+    ],
+    correct: 0,
+    explanation:
+      "AWS DataSync makes it simple and fast to move large amounts of data online between on-premises storage and Amazon S3, EFS, or FSx.",
+  },
+  {
+    question: "What is AWS Application Migration Service used for?",
+    options: [
+      "Database migration",
+      "Lift-and-shift migration",
+      "Code refactoring",
+      "Cost optimization",
+    ],
+    correct: 1,
+    explanation:
+      "AWS Application Migration Service (AWS MGN) simplifies and expedites migration from physical, virtual, and cloud-based servers to AWS with minimal downtime.",
+  },
+  {
+    question:
+      "Which service helps discover on-premises applications before migration?",
+    options: [
+      "AWS Migration Hub",
+      "AWS Application Discovery Service",
+      "AWS Server Migration Service",
+      "AWS DataSync",
+    ],
+    correct: 1,
+    explanation:
+      "AWS Application Discovery Service helps enterprise customers plan migration projects by gathering information about their on-premises data centers.",
+  },
+  {
+    question: "What is the maximum data transfer capacity of AWS Snowmobile?",
+    options: ["80 TB", "100 TB", "100 PB", "1 EB"],
+    correct: 2,
+    explanation:
+      "AWS Snowmobile is an exabyte-scale data transfer service with up to 100 PB of storage capacity per Snowmobile truck.",
+  },
+
+  // DevOps & Developer Tools
+  {
+    question: "Which AWS service provides infrastructure as code templates?",
+    options: [
+      "AWS CodeDeploy",
+      "AWS CloudFormation",
+      "AWS CodeBuild",
+      "AWS Systems Manager",
+    ],
+    correct: 1,
+    explanation:
+      "AWS CloudFormation provides a common language for you to model and provision AWS and third-party application resources using templates.",
+  },
+  {
+    question: "What is AWS CodeStar used for?",
+    options: [
+      "Code compilation",
+      "Project management and CI/CD",
+      "Code repository",
+      "Performance monitoring",
+    ],
+    correct: 1,
+    explanation:
+      "AWS CodeStar enables you to quickly develop, build, and deploy applications on AWS by providing a unified user interface and project templates.",
+  },
+  {
+    question: "Which service provides managed Apache Kafka?",
+    options: [
+      "Amazon Kinesis",
+      "Amazon MQ",
+      "Amazon MSK",
+      "Amazon EventBridge",
+    ],
+    correct: 2,
+    explanation:
+      "Amazon Managed Streaming for Apache Kafka (Amazon MSK) is a fully managed service that makes it easy to build and run applications that use Apache Kafka.",
+  },
+  {
+    question: "What is AWS X-Ray used for?",
+    options: [
+      "Cost analysis",
+      "Application performance monitoring",
+      "Security scanning",
+      "Backup management",
+    ],
+    correct: 1,
+    explanation:
+      "AWS X-Ray helps developers analyze and debug production, distributed applications, such as those built using a microservices architecture.",
+  },
+
+  // Containers & Orchestration
+  {
+    question: "Which AWS service provides managed Kubernetes?",
+    options: ["Amazon ECS", "AWS Fargate", "Amazon EKS", "AWS Batch"],
+    correct: 2,
+    explanation:
+      "Amazon Elastic Kubernetes Service (Amazon EKS) is a managed service that makes it easy for you to run Kubernetes on AWS.",
+  },
+  {
+    question: "What is the maximum number of tasks per ECS service?",
+    options: ["1,000", "5,000", "10,000", "No limit"],
+    correct: 3,
+    explanation:
+      "There is no hard limit on the number of tasks per ECS service, though there are account limits on total running tasks that can be increased.",
+  },
+  {
+    question: "Which container registry service is provided by AWS?",
+    options: [
+      "Docker Hub",
+      "Amazon ECR",
+      "Google Container Registry",
+      "Azure Container Registry",
+    ],
+    correct: 1,
+    explanation:
+      "Amazon Elastic Container Registry (ECR) is a fully managed Docker container registry that makes it easy to store, manage, and deploy Docker container images.",
+  },
+  {
+    question: "What is AWS App Runner used for?",
+    options: [
+      "Container orchestration",
+      "Serverless container deployment",
+      "Database management",
+      "File storage",
+    ],
+    correct: 1,
+    explanation:
+      "AWS App Runner is a fully managed service that makes it easy for developers to quickly deploy containerized web applications and APIs at scale.",
+  },
+
+  // Internet of Things (IoT)
+  {
+    question: "Which AWS service provides IoT device management?",
+    options: [
+      "AWS IoT Core",
+      "AWS IoT Device Management",
+      "AWS IoT Analytics",
+      "AWS IoT Greengrass",
+    ],
+    correct: 1,
+    explanation:
+      "AWS IoT Device Management makes it easy to securely register, organize, monitor, and remotely manage IoT devices at scale.",
+  },
+  {
+    question: "What is AWS IoT Greengrass used for?",
+    options: [
+      "Cloud analytics",
+      "Edge computing for IoT",
+      "Device registration",
+      "Data visualization",
+    ],
+    correct: 1,
+    explanation:
+      "AWS IoT Greengrass extends AWS functionality to edge devices so they can act locally on the data they generate while still using the cloud for management, analytics, and durable storage.",
+  },
+  {
+    question: "Which service helps analyze IoT data at scale?",
+    options: [
+      "AWS IoT Core",
+      "AWS IoT Analytics",
+      "AWS IoT Device Defender",
+      "AWS IoT Events",
+    ],
+    correct: 1,
+    explanation:
+      "AWS IoT Analytics is a fully managed service that makes it easy to run and operationalize sophisticated analytics on massive volumes of IoT data.",
+  },
+
+  // Additional Pricing & Economics
+  {
+    question: "What is the AWS pricing model for Lambda functions?",
+    options: [
+      "Per hour",
+      "Per request and compute time",
+      "Monthly subscription",
+      "Per GB stored",
+    ],
+    correct: 1,
+    explanation:
+      "AWS Lambda pricing is based on the number of requests and the duration of code execution, measured in GB-seconds.",
+  },
+  {
+    question: "Which factors affect Amazon S3 pricing?",
+    options: [
+      "Storage amount only",
+      "Storage, requests, and data transfer",
+      "Number of buckets",
+      "Geographic location only",
+    ],
+    correct: 1,
+    explanation:
+      "Amazon S3 pricing is based on storage amount, number and type of requests, data transfer out of S3, and optional features like storage management.",
+  },
+  {
+    question: "What is AWS Savings Plans?",
+    options: [
+      "A discount program",
+      "Flexible pricing model for compute services",
+      "Free tier extension",
+      "Enterprise support plan",
+    ],
+    correct: 1,
+    explanation:
+      "AWS Savings Plans offer significant savings over On-Demand pricing in exchange for a commitment to use a specific amount of compute power for a 1 or 3 year period.",
+  },
+  {
+    question: "Which tool helps optimize AWS costs automatically?",
+    options: [
+      "AWS Budgets",
+      "AWS Cost Explorer",
+      "AWS Compute Optimizer",
+      "AWS Trusted Advisor",
+    ],
+    correct: 2,
+    explanation:
+      "AWS Compute Optimizer recommends optimal AWS compute resources for your workloads to reduce costs and improve performance by using machine learning.",
+  },
+
+  // Additional Well-Architected Principles
+  {
+    question:
+      "Which Well-Architected principle focuses on environmental impact?",
+    options: [
+      "Cost Optimization",
+      "Performance Efficiency",
+      "Sustainability",
+      "Operational Excellence",
+    ],
+    correct: 2,
+    explanation:
+      "The Sustainability pillar focuses on minimizing the environmental impacts of running cloud workloads by understanding their impacts and reducing resource consumption.",
+  },
+  {
+    question: "What is the key principle of the Operational Excellence pillar?",
+    options: [
+      "Minimize costs",
+      "Automate everything",
+      "Make frequent, small, reversible changes",
+      "Use the latest technology",
+    ],
+    correct: 2,
+    explanation:
+      "A key principle of Operational Excellence is to make frequent, small, reversible changes to reduce the scope of failures and enable faster recovery.",
+  },
+  {
+    question: "Which pillar emphasizes 'design for failure'?",
+    options: [
+      "Security",
+      "Reliability",
+      "Performance Efficiency",
+      "Cost Optimization",
+    ],
+    correct: 1,
+    explanation:
+      "The Reliability pillar emphasizes designing for failure by assuming things will fail and building resilient systems that can handle failures gracefully.",
+  },
+
+  // Additional Security Questions
+  {
+    question: "What is AWS WAF used to protect against?",
+    options: [
+      "DDoS attacks only",
+      "Web application attacks",
+      "Network intrusions",
+      "Data breaches",
+    ],
+    correct: 1,
+    explanation:
+      "AWS WAF (Web Application Firewall) helps protect web applications from common web exploits and bots that may affect availability, compromise security, or consume excessive resources.",
+  },
+  {
+    question: "Which AWS service provides data loss prevention?",
+    options: ["Amazon Macie", "AWS GuardDuty", "AWS Inspector", "AWS Config"],
+    correct: 0,
+    explanation:
+      "Amazon Macie is a fully managed data security and data privacy service that uses machine learning and pattern matching to discover and protect sensitive data in AWS.",
+  },
+  {
+    question: "What is the purpose of AWS Resource Access Manager (RAM)?",
+    options: [
+      "Monitor resource usage",
+      "Share resources across AWS accounts",
+      "Control access permissions",
+      "Backup resources",
+    ],
+    correct: 1,
+    explanation:
+      "AWS Resource Access Manager (RAM) helps you securely share your resources across AWS accounts within your organization or organizational units.",
+  },
 ];
 
 // Function to shuffle options within a question
