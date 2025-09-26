@@ -26,15 +26,15 @@ jobs:
       - name: Setup Bun
         uses: oven-sh/setup-bun@v2
       - name: Install dependencies
-        run: cd quiz-app && bun install
+        run: cd aws-clf-quiz/quiz-app && bun install
       - name: Build
-        run: cd quiz-app && bun run build
+        run: cd aws-clf-quiz/quiz-app && bun run build
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: "./quiz-app/dist"
+          path: "./aws-clf-quiz/quiz-app/dist"
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
