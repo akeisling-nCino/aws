@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
-import type { QuizState } from "./types/quiz";
+import type { QuizState, UserAnswer } from "./types/quiz";
 import { selectRandomQuestions } from "./data/questions";
 import QuizHeader from "./components/QuizHeader";
 import QuizStats from "./components/QuizStats";
 import QuizQuestion from "./components/QuizQuestion";
 import QuizResults from "./components/QuizResults";
+import QuizReview from "./components/QuizReview";
 import "./App.css";
 
 function App() {
@@ -14,7 +15,9 @@ function App() {
     correctAnswers: 0,
     answerSubmitted: false,
     quizQuestions: [],
+    userAnswers: [],
     isComplete: false,
+    isReviewing: false,
   });
 
   // Initialize quiz with random questions
@@ -38,10 +41,17 @@ function App() {
       quizState.quizQuestions[quizState.currentQuestionIndex];
     const isCorrect = quizState.selectedAnswer === currentQuestion.correct;
 
+    const userAnswer: UserAnswer = {
+      questionIndex: quizState.currentQuestionIndex,
+      selectedOption: quizState.selectedAnswer,
+      isCorrect,
+    };
+
     setQuizState((prev) => ({
       ...prev,
       answerSubmitted: true,
       correctAnswers: prev.correctAnswers + (isCorrect ? 1 : 0),
+      userAnswers: [...prev.userAnswers, userAnswer],
     }));
   };
 
@@ -77,8 +87,18 @@ function App() {
       correctAnswers: 0,
       answerSubmitted: false,
       quizQuestions: questions,
+      userAnswers: [],
       isComplete: false,
+      isReviewing: false,
     });
+  };
+
+  const startReview = () => {
+    setQuizState((prev) => ({ ...prev, isReviewing: true }));
+  };
+
+  const exitReview = () => {
+    setQuizState((prev) => ({ ...prev, isReviewing: false }));
   };
 
   if (quizState.quizQuestions.length === 0) {
@@ -125,11 +145,20 @@ function App() {
           />
         </>
       ) : (
-        <QuizResults
-          correctAnswers={quizState.correctAnswers}
-          totalQuestions={quizState.quizQuestions.length}
-          onRestartQuiz={restartQuiz}
-        />
+        !quizState.isReviewing ? (
+          <QuizResults
+            correctAnswers={quizState.correctAnswers}
+            totalQuestions={quizState.quizQuestions.length}
+            onRestartQuiz={restartQuiz}
+            onStartReview={startReview}
+          />
+        ) : (
+          <QuizReview
+            questions={quizState.quizQuestions}
+            userAnswers={quizState.userAnswers}
+            onExitReview={exitReview}
+          />
+        )
       )}
     </div>
   );

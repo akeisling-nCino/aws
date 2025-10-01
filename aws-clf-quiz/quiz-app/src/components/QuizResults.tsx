@@ -2,12 +2,14 @@ interface QuizResultsProps {
   correctAnswers: number;
   totalQuestions: number;
   onRestartQuiz: () => void;
+  onStartReview: () => void;
 }
 
 const QuizResults = ({
   correctAnswers,
   totalQuestions,
   onRestartQuiz,
+  onStartReview,
 }: QuizResultsProps) => {
   const scorePercentage = Math.round((correctAnswers / totalQuestions) * 100);
 
@@ -36,9 +38,14 @@ const QuizResults = ({
         <br />
         <strong>{getScoreMessage(scorePercentage)}</strong>
       </p>
-      <button className="btn btn-primary" onClick={onRestartQuiz}>
-        Start New Quiz
-      </button>
+      <div className="results-buttons">
+        <button className="btn btn-secondary" onClick={onStartReview}>
+          📋 Review Answers
+        </button>
+        <button className="btn btn-primary" onClick={onRestartQuiz}>
+          Start New Quiz
+        </button>
+      </div>
     </div>
   );
 };
