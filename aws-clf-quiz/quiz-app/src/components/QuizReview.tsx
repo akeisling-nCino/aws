@@ -24,6 +24,15 @@ const QuizReview = ({ questions, userAnswers, onExitReview }: QuizReviewProps) =
     });
   };
 
+  const expandAll = () => {
+    const allIndices = userAnswers.map((_, index) => index);
+    setExpandedQuestions(new Set(allIndices));
+  };
+
+  const collapseAll = () => {
+    setExpandedQuestions(new Set());
+  };
+
   return (
     <div className="quiz-review">
       <div className="review-header">
@@ -31,9 +40,19 @@ const QuizReview = ({ questions, userAnswers, onExitReview }: QuizReviewProps) =
           <h2>📋 Quiz Review</h2>
           <span className="review-score">Score: {correctCount}/{userAnswers.length} ({scorePercentage}%)</span>
         </div>
-        <button className="btn btn-secondary" onClick={onExitReview}>
-          Back to Results
-        </button>
+        <div className="review-controls">
+          <div className="expand-controls">
+            <button className="btn btn-sm" onClick={expandAll}>
+              Expand All
+            </button>
+            <button className="btn btn-sm" onClick={collapseAll}>
+              Collapse All
+            </button>
+          </div>
+          <button className="btn btn-secondary" onClick={onExitReview}>
+            Back to Results
+          </button>
+        </div>
       </div>
 
       <div className="review-questions">
@@ -70,10 +89,6 @@ const QuizReview = ({ questions, userAnswers, onExitReview }: QuizReviewProps) =
 
               {isExpanded && (
                 <>
-                  <div className="question-text">
-                    <strong>{question.question}</strong>
-                  </div>
-
                   <div className="answer-options">
                     {question.options.map((option, optionIndex) => {
                       let className = 'option-review';
@@ -129,11 +144,6 @@ const QuizReview = ({ questions, userAnswers, onExitReview }: QuizReviewProps) =
         })}
       </div>
 
-      <div className="review-footer">
-        <button className="btn btn-primary" onClick={onExitReview}>
-          Back to Results
-        </button>
-      </div>
     </div>
   );
 };
