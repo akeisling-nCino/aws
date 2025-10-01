@@ -16,8 +16,8 @@ body {
 @media (max-width: 600px) {
   body {
     padding: 10px;
-    padding-top: max(10px, env(safe-area-inset-top));
-    padding-bottom: max(10px, env(safe-area-inset-bottom));
+    padding-top: max(50px, env(safe-area-inset-top, 50px));
+    padding-bottom: max(10px, env(safe-area-inset-bottom, 10px));
   }
 }
 
@@ -471,7 +471,7 @@ body {
 @media (max-width: 600px) {
   .container {
     margin: 5px;
-    margin-top: max(5px, 10px);
+    margin-top: 0;
     border-radius: 8px;
   }
 
