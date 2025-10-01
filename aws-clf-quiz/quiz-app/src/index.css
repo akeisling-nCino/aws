@@ -22,6 +22,7 @@ body {
   min-width: 320px;
   height: 100vh;
   background: linear-gradient(135deg, #232f3e, #ff9900);
+  background-attachment: fixed;
   overflow: hidden;
 }
 
