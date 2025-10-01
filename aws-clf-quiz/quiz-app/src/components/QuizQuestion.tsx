@@ -62,15 +62,6 @@ const QuizQuestion = ({
             </li>
           ))}
         </ul>
-
-        <div className="explanation-container">
-          {answerSubmitted && (
-            <div className="explanation show">
-              <h4>Explanation:</h4>
-              <p>{question.explanation}</p>
-            </div>
-          )}
-        </div>
       </div>
 
       <div className="controls">
@@ -96,6 +87,13 @@ const QuizQuestion = ({
           </button>
         )}
       </div>
+
+      {answerSubmitted && (
+        <div className="explanation show">
+          <h4>Explanation:</h4>
+          <p>{question.explanation}</p>
+        </div>
+      )}
     </div>
   );
 };

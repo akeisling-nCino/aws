@@ -149,12 +149,8 @@ body {
   cursor: not-allowed;
 }
 
-.explanation-container {
-  margin-top: 20px;
-  min-height: 120px;
-}
-
 .explanation {
+  margin-top: 20px;
   padding: 20px;
   background: #e3f2fd;
   border-left: 4px solid #2196f3;
@@ -549,11 +545,8 @@ body {
     border-radius: 6px;
   }
 
-  .explanation-container {
-    min-height: 100px;
-  }
-
   .explanation {
+    margin-top: 15px;
     padding: 12px;
     font-size: 14px;
     line-height: 1.4;
